@@ -1,0 +1,11 @@
+{% extends "jurrmarketplace/base.html" %}
+
+{% block content %}
+    <h1>Apply for Assignment: {{ assignment.title }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Apply</button>
+    </form>
+{% endblock %}

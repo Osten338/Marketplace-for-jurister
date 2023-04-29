@@ -1,0 +1,16 @@
+{% extends "jurrmarketplace/base.html" %}
+
+{% block content %}
+  <h2>Company Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+  <p>
+    Don't have an account? <a href="{% url 'company_signup' %}">Sign up as a Company</a>
+  </p>
+  <p>
+    Are you a lawyer? <a href="{% url 'lawyer_login' %}">Log in as a Lawyer</a>
+  </p>
+{% endblock %}

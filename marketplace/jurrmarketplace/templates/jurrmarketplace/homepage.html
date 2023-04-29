@@ -1,0 +1,30 @@
+{% extends "jurrmarketplace/base.html" %}
+
+{% block content %}
+    <h1>Welcome to the Marketplace for Lawyers and Companies</h1>
+
+    {% if user.is_authenticated %}
+        <p>
+            <a href="{% url 'create_assignment' %}">Create New Assignment</a>
+        </p>
+        <p>
+            <a href="{% url 'assignment_list' %}">View All Assignments</a>
+        </p>
+        <p>
+            <a href="{% url 'logout' %}">Logout</a>
+        </p>
+    {% else %}
+        <p>
+            <a href="{% url 'company_login' %}">Log in as a Company</a>
+        </p>
+        <p>
+            <a href="{% url 'lawyer_login' %}">Log in as a Lawyer</a>
+        </p>
+        <p>
+            <a href="{% url 'company_register' %}">Register as a Company</a>
+        </p>
+        <p>
+            <a href="{% url 'lawyer_register' %}">Register as a Lawyer</a>
+        </p>
+    {% endif %}
+{% endblock %}
